@@ -1,10 +1,11 @@
-import { Image, StyleSheet, Text, View } from 'react-native'
+import { Image, StyleSheet, View } from 'react-native'
 import React, { useEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 
 import HomeContainer from '../../features/home'
 
 import { sizes } from '../../constants/theme';
+import { Text } from '../../features/@ui/components';
 
 const HomeScreens = () => {
   const navigation = useNavigation();

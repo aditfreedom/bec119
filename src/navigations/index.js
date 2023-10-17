@@ -7,7 +7,6 @@ import LoginScreens from '../screens/login';
 import HomeScreens from '../screens/home';
 import TabNavigation from './tab-navigation';
 import Berita from '../features/berita';
-import DetailBerita from '../features/berita/DetailBerita';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +17,7 @@ const index = () => {
         <Stack.Screen name="onboarding" component={OnboardingScreens} />
         <Stack.Screen name="login" component={LoginScreens} />
         <Stack.Screen name="home" component={TabNavigation} />
-        <Stack.Screen name="detail berita" component={DetailBerita} />
+        {/* <Stack.Screen name="detail berita" component={DetailBerita} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

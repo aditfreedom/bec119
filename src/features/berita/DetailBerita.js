@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {StyleSheet, View, ScrollView, Image, Dimensions} from 'react-native';
 import {useNavigation, useRoute} from '@react-navigation/native';
-import {Text} from '../../components';
+import {Text} from '../@ui/components';
 import {colors, sizes} from '../../constants/theme';
 // import {WebView} from 'react-native-webview';
 // import AutoHeightWebView from 'react-native-autoheight-webview'
@@ -25,10 +25,7 @@ const DetailBerita = () => {
       <View style={styles.container}>
         <View style={styles.containerThumbnail}>
           <Image
-            source={
-              route.params.detail.thumbnail == ''
-                ? require('../../assets/no-image.png')
-                : route.params.detail.thumbnail
+            source={route.params.detail.thumbnail
             }
             style={styles.imgThumbnail}
           />

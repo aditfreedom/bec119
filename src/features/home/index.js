@@ -11,7 +11,9 @@ import {
   ScrollView,
 } from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import Carousel from 'react-native-snap-carousel';
+// import Carousel from 'react-native-snap-carousel';
+
+import Carousel from 'react-native-reanimated-carousel';
 import MaterialIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {colors, sizes} from '../../constants/theme';
@@ -128,7 +130,7 @@ const HomeContainer = () => {
         </View>
 
         <View style={styles.bannerContainer}>
-          <Carousel
+          {/* <Carousel
             layout={'default'}
             ref={carousel}
             data={DATA}
@@ -141,6 +143,17 @@ const HomeContainer = () => {
             autoplayInterval={5000}
             lockScrollWhileSnapping={true}
             loop={true}
+          /> */}
+          <Carousel
+            loop
+            width={screenWidth}
+            height={screenWidth / 2}
+            autoPlay={true}
+            data={DATA}
+            scrollAnimationDuration={1000}
+            onSnapToItem={index => console.log('current index:', index)}
+            mode="parallax"
+            renderItem={renderCarousel}
           />
         </View>
 
