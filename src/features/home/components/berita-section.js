@@ -22,7 +22,7 @@ const BeritaSection = ({data}) => {
     return data.map((item, i) => {
       return (
         <TouchableOpacity
-          onPress={()=>navigation.navigate('detail berita', {detail: item})}
+          onPress={()=>navigation.navigate('detail-berita', {detail: item})}
           key={i + ''}>
           <KabarItem data={item} key={i + ''} />
         </TouchableOpacity>

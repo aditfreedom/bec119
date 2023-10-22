@@ -33,7 +33,7 @@ const Berita = () => {
     return (
       <View style={styles.card} key={index + ''}>
         <TouchableOpacity
-          onPress={() => navigation.navigate('detail berita', {detail: item})}
+          onPress={() => navigation.navigate('detail-berita', {detail: item})}
           activeOpacity={0.8}>
           <BeritaItem data={item} />
         </TouchableOpacity>
@@ -44,7 +44,7 @@ const Berita = () => {
   const renderHighlight = ({index, item}) => {
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('detail berita', {detail: item})}
+        onPress={() => navigation.navigate('detail-berita', {detail: item})}
         activeOpacity={0.8}>
         <BeritaHighlightedItem data={item} />
       </TouchableOpacity>

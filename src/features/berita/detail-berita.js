@@ -51,12 +51,9 @@ const DetailBerita = () => {
           /> */}
           <HTML
             source={{
-              html: `<body">${route.params.detail.content.replace(/(\r\n|\n|\r)/gm,'')}</body>`,
+              html: `${route.params.detail.content.replace(/(\r\n|\n|\r)/gm,'')}`,
             }}
-            style={{
-              width: width - sizes.base * 2,
-              backgroundColor: 'rgba(0,0,0,0)',
-            }}
+            contentWidth={width}
           />
         </View>
       </View>
@@ -90,6 +87,7 @@ const styles = StyleSheet.create({
     flex: 1,
     minHeight: height - height / 3,
     padding: sizes.base,
+    backgroundColor:'white'
   },
   kategori: {
     paddingVertical: 5,
