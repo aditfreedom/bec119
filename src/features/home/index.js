@@ -47,8 +47,7 @@ const DATA = [
 ];
 
 const HomeContainer = () => {
-  const carousel = useRef(null);
-  const [activeSlider, setActiveSlider] = useState(0);
+  const navigation = useNavigation();
 
   const renderCarousel = ({item, index}) => {
     return (
@@ -81,13 +80,17 @@ const HomeContainer = () => {
         </ImageBackground>
 
         <View style={styles.menuContainer}>
-          <View style={styles.menuItem}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon src={require('../../assets/icons/hospital.png')} size={50} />
             <Text caption bold center marginTop="auto">
               Info Faskes
             </Text>
-          </View>
-          <View style={styles.menuItem}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon
               src={require('../../assets/icons/igd.png')}
               size={60}
@@ -96,20 +99,26 @@ const HomeContainer = () => {
             <Text caption bold center marginTop="auto">
               Info IGD
             </Text>
-          </View>
-          <View style={styles.menuItem}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon src={require('../../assets/icons/room_bed.png')} size={45} />
             <Text caption bold center marginTop="auto">
               Info Kesediaan Tempat Tidur
             </Text>
-          </View>
-          <View style={styles.menuItem}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon src={require('../../assets/icons/doctor.png')} size={45} />
             <Text caption bold center marginTop="auto">
               Konsultasi Dokter
             </Text>
-          </View>
-          <View style={styles.menuItem}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon
               src={require('../../assets/icons/medical_check.png')}
               size={50}
@@ -117,8 +126,10 @@ const HomeContainer = () => {
             <Text caption bold center marginTop="auto">
               Pendaftaran Pelayanan
             </Text>
-          </View>
-          <View style={styles.menuItem}>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('beds')}
+            style={styles.menuItem}>
             <Icon
               src={require('../../assets/icons/id_card_successfull.png')}
               size={60}
@@ -126,24 +137,10 @@ const HomeContainer = () => {
             <Text caption bold center marginTop="auto">
               Area Member
             </Text>
-          </View>
+          </TouchableOpacity>
         </View>
 
         <View style={styles.bannerContainer}>
-          {/* <Carousel
-            layout={'default'}
-            ref={carousel}
-            data={DATA}
-            sliderWidth={screenWidth}
-            itemWidth={screenWidth / 1.5}
-            renderItem={renderCarousel}
-            onSnapToItem={index => setActiveSlider(index)}
-            autoplay={true}
-            autoplayDelay={5000}
-            autoplayInterval={5000}
-            lockScrollWhileSnapping={true}
-            loop={true}
-          /> */}
           <Carousel
             loop
             width={screenWidth}
@@ -151,7 +148,6 @@ const HomeContainer = () => {
             autoPlay={true}
             data={DATA}
             scrollAnimationDuration={1000}
-            onSnapToItem={index => console.log('current index:', index)}
             mode="parallax"
             renderItem={renderCarousel}
           />

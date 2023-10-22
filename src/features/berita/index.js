@@ -87,32 +87,41 @@ const Berita = () => {
         </View>
       </View>
 
-      <FlatList
-        data={data}
-        renderItem={renderKategori}
-        keyExtractor={(item, index) => index + ''}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.containerKategori}
-      />
+      <View style={styles.section}>
+        <Text marginLeft={sizes.base} bold>
+          Kategori
+        </Text>
+        <FlatList
+          data={data}
+          renderItem={renderKategori}
+          keyExtractor={(item, index) => index + ''}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.containerKategori}
+        />
+        <FlatList
+          data={data}
+          renderItem={renderHighlight}
+          keyExtractor={(item, index) => index + ''}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.highlightedContainer}
+        />
+      </View>
 
-      <FlatList
-        data={data}
-        renderItem={renderHighlight}
-        keyExtractor={(item, index) => index + ''}
-        horizontal={true}
-        showsHorizontalScrollIndicator={false}
-        contentContainerStyle={styles.highlightedContainer}
-      />
-
-      <FlatList
-        data={[...data, ...data]}
-        renderItem={renderItem}
-        keyExtractor={(item, index) => index + ''}
-        horizontal={false}
-        showsVerticalScrollIndicator={false}
-        contentContainerStyle={styles.containerBeritaList}
-      />
+      <View style={styles.section}>
+        <Text bold marginLeft={sizes.base}>
+          Rekomendasi Berita
+        </Text>
+        <FlatList
+          data={[...data, ...data]}
+          renderItem={renderItem}
+          keyExtractor={(item, index) => index + ''}
+          horizontal={false}
+          showsVerticalScrollIndicator={false}
+          contentContainerStyle={styles.containerBeritaList}
+        />
+      </View>
     </View>
   );
 };
@@ -123,7 +132,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingVertical: sizes.base,
-    gap: sizes.base,
+    gap: sizes.base / 2,
+    backgroundColor: 'white',
   },
   searchBar: {
     flexDirection: 'row',
@@ -149,15 +159,13 @@ const styles = StyleSheet.create({
   },
   card: {
     backgroundColor: 'white',
-    borderRadius: 5,
-    elevation: 5,
-    marginBottom: sizes.base,
     paddingTop: sizes.base,
-    paddingHorizontal: sizes.base,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.gray2,
   },
   containerKategori: {
     borderWidth: 1,
-    height: 65,
+    height: 32,
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: sizes.base,
@@ -185,10 +193,14 @@ const styles = StyleSheet.create({
     paddingBottom: 100,
   },
 
-  highlightedContainer:{
+  highlightedContainer: {
     gap: sizes.base,
-    height: 410,
-    paddingVertical:2,
+    height: height / 3.3,
+    paddingVertical: 2,
     paddingHorizontal: sizes.base,
-  }
+  },
+
+  section: {
+    gap: 10,
+  },
 });
