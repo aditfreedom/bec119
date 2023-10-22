@@ -81,7 +81,7 @@ const HomeContainer = () => {
 
         <View style={styles.menuContainer}>
           <TouchableOpacity
-            onPress={() => navigation.navigate('beds')}
+            onPress={() => navigation.navigate('faskes-list')}
             style={styles.menuItem}>
             <Icon src={require('../../assets/icons/hospital.png')} size={50} />
             <Text caption bold center marginTop="auto">

@@ -8,6 +8,7 @@ import LoginScreens from '../screens/login';
 import TabNavigation from './tab-navigation';
 import DetailBeritaScreens from '../screens/berita/detail-berita';
 import BedList from '../screens/beds';
+import FaskesList from '../screens/faskes-list';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const index = () => {
         <Stack.Screen name="home" component={TabNavigation} />
         <Stack.Screen name="detail-berita" component={DetailBeritaScreens} />
         <Stack.Screen name="beds" component={BedList} />
+        <Stack.Screen name="faskes-list" component={FaskesList} />
         {/* <Stack.Screen name="detail berita" component={DetailBerita} /> */}
       </Stack.Navigator>
     </NavigationContainer>
